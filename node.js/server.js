@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
     let path = '../html/'
     let styles = '../styles/Styles.css'
 
-    
+
     switch(req.url) {
         case '/':
             path += 'index.html'
@@ -47,6 +47,6 @@ const server = http.createServer((req, res) => {
     } )
 });
 
-server.listen(3000, 'localhost', () => {
+server.listen(3000, () => {
     console.log('listening for requests on port 3000')
 })
