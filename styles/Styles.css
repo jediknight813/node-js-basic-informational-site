@@ -1,0 +1,154 @@
+*{
+    margin-left: 0%;
+    margin-top: 0%;
+    }
+
+.page_header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 0%;
+}
+
+.page_header img{
+    width: 90px;
+    margin-left: 20px;
+    transition: linear 0.4s;
+}
+
+
+.page_header div{
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    width: 300px;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.page_header div a{
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    font-size: 25px;
+    transition: linear 0.4s;
+}
+
+.page_header div a:hover{
+    font-size: 26px;
+    transition: linear 0.4s;
+}
+
+.page_header img:hover {
+    transition: linear 0.4s;
+    width: 95px;
+}
+
+.html_column { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 90px;
+}
+
+.index_page_parent_container h1 {
+    color: black;
+    font-size: 80px;
+    margin-top: 40px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.index_page_parent_container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.index_page_text_container {
+    width: 900px;
+    height: 1000px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: -20px;
+    color: white;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    backdrop-filter: blur(50px);
+}
+
+.index_page_text_container_about {
+    width: 900px;
+    margin-bottom: 50px;
+    height: 390px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: -20px;
+    color: white;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    backdrop-filter: blur(50px);
+}
+
+.contact_me_container {
+    width: 50%;
+    height: auto;
+    padding: 30px;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact_me_container div{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact_me_container div input {
+    height: 30px;
+    width: 400px;
+    outline: none;
+}
+
+.contact_me_container button{
+    outline: none;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bolder;
+    transition: linear 0.4s;
+}
+
+.contact_me_container button:hover {
+    width: 210px;
+    transition: linear 0.4s;
+}
+
+.contact_me_container h4 {
+    color: white;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-right: 10px;
+}

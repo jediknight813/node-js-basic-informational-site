@@ -5,10 +5,10 @@ const fs  = require('fs');
 const server = http.createServer((req, res) => {
     console.log('request made');
 
-    res.setHeader('Content-Type', 'text/html')
-
     let path = '../html/'
+    let styles = '../styles/Styles.css'
 
+    
     switch(req.url) {
         case '/':
             path += 'index.html'
@@ -21,6 +21,12 @@ const server = http.createServer((req, res) => {
         case '/contact':
             path += 'contact-me.html'
             break;
+
+        case "/styles/Styles.css":
+            res.writeHead(200, {"Content-Type": "text/css"});
+            var fileStream = fs.createReadStream(styles, "UTF-8");
+            fileStream.pipe(res);
+            break
         
         default:
             path += '404.html'
@@ -30,11 +36,11 @@ const server = http.createServer((req, res) => {
 
     fs.readFile(path, (err, data) => {
         if (err) {
-            // put 404 page here
             console.log("error")
             res.end()
         }
         else {
+            res.setHeader('Content-Type', 'text/html')
             res.write(data)
             res.end()
         }
