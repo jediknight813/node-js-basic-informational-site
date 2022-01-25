@@ -1,52 +1,34 @@
-const http = require('http');
-const fs  = require('fs');
+const express = require('express');
+const app = express();
+const port = 3000;
+const path = require('path');
 
 
-const server = http.createServer((req, res) => {
-    console.log('request made');
-
-    let path = '../html/'
-    let styles = '../styles/Styles.css'
+app.use(express.static('../public'));
+app.use('/css', express.static(__dirname + 'public/css'))
 
 
-    switch(req.url) {
-        case '/':
-            path += 'index.html'
-            break;
-            
-        case '/about':
-            path += 'about.html'
-            break;
-        
-        case '/contact':
-            path += 'contact-me.html'
-            break;
 
-        case "/styles/Styles.css":
-            res.writeHead(200, {"Content-Type": "text/css"});
-            var fileStream = fs.createReadStream(styles, "UTF-8");
-            fileStream.pipe(res);
-            break
-        
-        default:
-            path += '404.html'
-            break;
-    }
-
-
-    fs.readFile(path, (err, data) => {
-        if (err) {
-            console.log("error")
-            res.end()
-        }
-        else {
-            res.setHeader('Content-Type', 'text/html')
-            res.write(data)
-            res.end()
-        }
-    } )
+app.get('/', function(req, res) {
+        res.sendFile(path.join(process.cwd(), '../html/index.html'));
 });
 
-server.listen(3000, () => {
-    console.log('listening for requests on port 3000')
-})
+
+app.get('/contact', function(req, res) {
+    res.sendFile(path.join(process.cwd(), '../html/contact-me.html'));
+});
+
+
+app.get('/about', function(req, res) {
+    res.sendFile(path.join(process.cwd(), '../html/about.html'));
+});
+
+
+app.get('*', function (req, res, next) {
+    res.sendFile(path.join(process.cwd(), '../html/404.html'));
+});
+
+
+app.listen(port, function() {
+    console.log(`Example app listening on port ${port}!`)
+  });

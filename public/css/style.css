@@ -152,3 +152,12 @@
     margin-top: 30px;
     margin-right: 10px;
 }
+
+.error_page_container {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
